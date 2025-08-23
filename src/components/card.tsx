@@ -94,7 +94,7 @@ const Card: React.FC = () => {
     <section className="relative w-full mt-50 bg-black py-24">
       <div className="max-w-6xl mx-auto rounded-[28px] bg-[#0B0B0B]/60 ring-1 ring-white/10 backdrop-blur-md px-4 sm:px-8 pt-16 pb-12 relative overflow-hidden">
         {/* Pill + headline */}
-        <div className="absolute -top-4 pt-15 left-1/2 -translate-x-1/2">
+        <div className="absolute -top-8 pt-15 left-1/2 -translate-x-1/2">
           <span className="inline-flex items-center rounded-full bg-gradient-to-r from-[#7C3AED] to-[#6EE7F6] px-4 py-1.5 text-xs font-semibold text-white shadow-lg">
             Our Values
           </span>
