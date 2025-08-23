@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+.font-monument {
+  font-family: "Monument Extended", sans-serif;
+}
+/* optional – smoother edge fade on side cards (Safari/WebKit safe) */
+.card-edge-mask {
+  -webkit-mask-image: radial-gradient(
+    120% 70% at 50% 50%,
+    #000 65%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(120% 70% at 50% 50%, #000 65%, transparent 100%);
+}
+
