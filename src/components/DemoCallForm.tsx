@@ -111,7 +111,7 @@ export default function DemoCallForm() {
     // left: "1273px",
     fontFamily: "Caveat, cursive",
     fontWeight: 400,
-    fontSize: "43px",
+    fontSize: "30px",
     lineHeight: "100%",
     letterSpacing: "0%",
   }}>
