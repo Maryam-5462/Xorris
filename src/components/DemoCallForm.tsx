@@ -29,7 +29,7 @@ export default function DemoCallForm() {
       {/* Centered Content */}
       <div className="relative z-20 flex flex-col items-center justify-center min-h-[140vh]">
   {/* Pill */}
-<div className="text-center mb-20 -mt-24">
+<div className="text-center mb-15 -mt-1">
   <div
     className="inline-block rounded-full bg-purple-600 px-6 py-4
                text-[21px] font-normal leading-[100%] tracking-[0] 
@@ -41,66 +41,66 @@ export default function DemoCallForm() {
 
 
 {/* Heading */}
-<h2 className="text-3xl font-semibold mb-30 text-center -mt-14">
+<h2 className="text-3xl font-semibold mb-18 text-center -mt-10">
   Try a conversation with live demo
 </h2>
+{/* Form */}
+  <form className="flex flex-col gap-5 w-full max-w-[450px]">
+  {/* Full Name */}
+  <div className="flex flex-col">
+    <label className="text-base mb-1" htmlFor="fullname">
+      Full Name
+    </label>
+    <input
+      id="fullname"
+      type="text"
+      placeholder="Enter Full Name"
+      required
+      className="mx-auto w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+    />
+  </div>
 
-  {/* Form stays in place */}
-  <form className="flex flex-col gap-6 w-full max-w-[596px]">
-          {/* Full Name */}
-          <div className="flex flex-col">
-            <label className="text-lg mb-1" htmlFor="fullname">
-              Full Name
-            </label>
-            <input
-              id="fullname"
-              type="text"
-              placeholder="Enter Full Name"
-              required
-              className="mx-auto w-[596px] rounded-xl border border-gray-700 bg-gray-800 px-5 py-4 text-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-          </div>
+  {/* Role */}
+  <div className="flex flex-col">
+    <label className="text-base mb-1" htmlFor="role">
+      Select Role
+    </label>
+    <select
+      id="role"
+      required
+      className="mx-auto w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-base text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+    >
+      <option value="">Select Role</option>
+      <option value="customer">Teacher</option>
+      <option value="sales">Student</option>
+      <option value="support">Client</option>
+      <option value="support">Ceo</option>
+    </select>
+  </div>
 
-          {/* Role */}
-          <div className="flex flex-col">
-            <label className="text-lg mb-1" htmlFor="role">
-              Select Role
-            </label>
-            <select
-              id="role"
-              required
-              className="mx-auto w-[596px] rounded-xl border border-gray-700 bg-gray-800 px-5 py-4 text-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            >
-              <option value="">Select Role</option>
-              <option value="customer">Teacher</option>
-              <option value="sales">Student</option>
-              <option value="support">Client</option>
-              <option value="support">Ceo</option>
-            </select>
-          </div>
+  {/* Call Goal */}
+  <div className="flex flex-col">
+    <label className="text-base mb-1" htmlFor="callgoal">
+      Call Goal
+    </label>
+    <textarea
+      id="callgoal"
+      placeholder="Enter Call Goal"
+      required
+      className="mx-auto w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+      rows={3}
+    />
+  </div>
 
-          {/* Call Goal */}
-          <div className="flex flex-col">
-            <label className="text-lg mb-1" htmlFor="callgoal">
-              Call Goal
-            </label>
-            <textarea
-              id="callgoal"
-              placeholder="Enter Call Goal"
-              required
-              className="mx-auto w-[596px] rounded-xl border border-gray-700 bg-gray-800 px-5 py-4 text-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              rows={4}
-            />
-          </div>
+  {/* Submit Button */}
+  <button
+    type="submit"
+    className="mx-auto w-full rounded-xl bg-gradient-to-r from-purple-600 to-purple-800 py-3 text-lg font-semibold text-white hover:opacity-90 transition"
+  >
+    Demo Call
+  </button>
+</form>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="mx-auto w-[596px] rounded-xl bg-gradient-to-r from-purple-600 to-purple-800 py-4 text-xl font-semibold text-white hover:opacity-90 transition"
-          >
-            Demo Call
-          </button>
-        </form>
       </div>
 
       {/* Arrow + Free Demo Call */}

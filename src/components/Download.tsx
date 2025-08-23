@@ -9,7 +9,7 @@ export default function Download() {
         marginLeft: "calc(50% - 50vw)",
         marginRight: "calc(50% - 50vw)",
         padding: "80px 20px",
-        height: "1000px",
+        height: "700px",
         position: "relative",
         display: "flex",
         justifyContent: "center", // center horizontally
@@ -29,7 +29,7 @@ export default function Download() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           zIndex: 0,
-          top: "-30px",
+          top: "1px",
           opacity: 0.30, // ✅ make bg dull
         }}
       />
@@ -43,7 +43,7 @@ export default function Download() {
           gap: "60px",
           zIndex: 1, // keeps above bg
           maxWidth: "1200px",
-          marginBottom: "-200px",
+          marginBottom: "-1px",
         }}
       >
         {/* Left Text Content */}

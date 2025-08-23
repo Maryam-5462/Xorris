@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
         <img
           src="/images/iPhone 15 Pro.png"
           alt="iPhone"
-          className="absolute w-[1194px] h-[791px] top-[100px] z-20"
+          className="absolute w-[1194px] h-[791px] -top-[20px] z-20"
         />
       </div>
     </section>

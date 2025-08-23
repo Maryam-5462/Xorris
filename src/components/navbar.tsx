@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
 
       <div className="relative">
         <Image
-          src="/images/Logo.png"
+          src="/images/xorris.png"
           alt="Xoris Logo"
           width={110}
           height={46}

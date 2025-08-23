@@ -44,7 +44,7 @@ export default function ScrollingStrip() {
     <div className="relative w-full">
   {/* Floating diagonal button */}
   <button
-    className="absolute top-[120px] left-[10px] 
+    className="absolute -top-[1px] left-[10px] 
                bg-[#6613E1] rounded-[24px] px-[18px] py-[6px] text-white text-[14px]
                transition-all duration-300 ease-in-out 
                hover:bg-[#520fba] hover:scale-105 hover:-translate-y-1 hover:shadow-lg

@@ -24,11 +24,12 @@ export default function ContentArea() {
       marginLeft: "calc(50% - 50vw)",
       marginRight: "calc(50% - 50vw)",
       backgroundImage: "url('/images/background.gif')",
+      opacity: "0.7",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       backgroundPosition: "center 0%",
       paddingTop: "50px", // padding from top for heading
-      paddingBottom: "100px", // padding bottom for content
+      paddingBottom: "10px", // padding bottom for content
     }}
   >
     {/* Buttons on About Us background */}
@@ -85,10 +86,10 @@ export default function ContentArea() {
               {/* Left stats cards */}
               <div className="flex flex-col items-center relative" style={{
                 marginTop: "-360px",
-                paddingLeft: "200px"
+                paddingLeft: "60px"
               }}>
                 {/* Top card */}
-                <div className="absolute top-0" style={{ left: "69%", transform: "translateX(-50%)" }}>
+                <div className="absolute top-0" style={{ left: "58%", transform: "translateX(-50%)" }}>
                   <div className="w-[120px] h-[150px] bg-[#1E1E1E] rounded-2xl flex flex-col items-center justify-center text-white">
                     <div className="font-bold text-[22px]">17M</div>
                     <div className="opacity-80 text-xs">Downloads</div>
@@ -108,7 +109,7 @@ export default function ContentArea() {
                 </div>
 
                 {/* Bottom card */}
-                <div className="absolute" style={{ top: "calc(140px + 120px + 40px)", left: "69%", transform: "translateX(-50%)" }}>
+                <div className="absolute" style={{ top: "calc(140px + 120px + 40px)", left: "58%", transform: "translateX(-50%)" }}>
                   <div className="w-[120px] h-[150px] bg-[#1E1E1E] rounded-2xl flex flex-col items-center justify-center text-white">
                     <div className="font-bold text-[22px]">8M+</div>
                     <div className="opacity-80 text-xs">Followers</div>
@@ -130,7 +131,7 @@ export default function ContentArea() {
                   style={{
                     position: "absolute",
                     top: "-25px",
-                    left: "-15px",
+                    left: "-110px",
                     width: "600px",
                     height: "700px",
                     zIndex: 1,

@@ -4,13 +4,13 @@
   width: 100%;
   background: #2e2e2e;
   transform: skewY(-3deg);
-  top: 110px;
+  top: 10px;
 }
 
 .strip {
   display: flex;
   gap: 80px;
-  padding: 20px;
+  padding: 10px;
   animation: scroll-left 20s linear infinite;
   width: max-content;
 }
@@ -57,7 +57,7 @@
     opacity: 1;
   }
   90% {
-    left: 50%;
+    left: 40%;
     opacity: 1;
   }
   100% {
