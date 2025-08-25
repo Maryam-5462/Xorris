@@ -4,7 +4,7 @@
   width: 100%;
   background: #2e2e2e;
   transform: skewY(-3deg);
-  top: 10px;
+  top: -19px;
 }
 
 .strip {
@@ -19,15 +19,7 @@
   font-size: 24px;
   font-weight: bold;
   white-space: nowrap;
-  transition: color 0.4s ease;
-}
-
-.white {
-  color: white;
-}
-
-.dim {
-  color: rgba(255, 255, 255, 0.3); /* Only inbound/outbound start dim */
+  color: white; /* All words are now white */
 }
 
 @keyframes scroll-left {
@@ -36,32 +28,5 @@
   }
   100% {
     transform: translateX(-50%);
-  }
-}
-
-.flying {
-  position: absolute;
-  left: -200px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  white-space: nowrap;
-  animation: fly-in 5s linear forwards;
-}
-
-@keyframes fly-in {
-  0% {
-    left: -200px;
-    opacity: 1;
-  }
-  90% {
-    left: 40%;
-    opacity: 1;
-  }
-  100% {
-    left: 55%;
-    opacity: 0;
   }
 }
