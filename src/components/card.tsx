@@ -74,16 +74,14 @@ export default function StackedCarousel() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen w-full bg-black">
+    <div className="flex justify-center items-center min-h-screen w-full bg-black transform scale-80 origin-top mt-25"> {/* 80% zoom effect */}
       <div 
-        className="relative flex flex-col items-center justify-center w-[1500px] max-w-[1500] min-h-[1100px] overflow-hidden text-white py-16 rounded-[40px]  // custom radius
- my-8"
-        style={{
+       className="relative flex flex-col items-center justify-center w-[1200px] min-h-[880px] overflow-hidden text-white py-16 rounded-[32px] "
 
+        style={{
           backgroundImage: "linear-gradient(rgba(48, 48, 48, 0.3), rgba(55, 53, 53, 0.3)), url('/images/lowBG.gif')",
           backgroundSize: "cover",
-          backgroundPosition: "center 20%", // shifts upward
-
+          backgroundPosition: "center 20%",
           backgroundRepeat: "no-repeat"
         }}
         onMouseEnter={() => setIsHovered(true)}
@@ -95,7 +93,6 @@ export default function StackedCarousel() {
             className="relative px-8 py-3 rounded-full font-semibold text-lg mb-6 shadow-lg overflow-hidden"
             style={{
               backgroundImage: "linear-gradient(rgba(102,19,225,0.8), rgba(102,19,225,0.8))",
-              // backgroundSize: "cover",
               backgroundPosition: "center",
               color: "white"
             }}
@@ -104,12 +101,12 @@ export default function StackedCarousel() {
           </button>
           
           {/* Heading Text */}
-          <h2 className="font-montserrat font-bold text-[24px] leading-[100%] text-center mb-12 max-w-2xl">
+          <h2 className="font-montserrat font-bold text-[19px] leading-[100%] text-center mb-12 max-w-2xl">
             Our values driven by relations
           </h2>
 
           {/* Carousel Container */}
-          <div className="relative w-full max-w-6xl flex items-center justify-center h-[480px]">
+          <div className="relative w-full max-w-5xl flex items-center justify-center h-[384px]">
             {cards.map((card, index) => {
               const offset = (index - current + cards.length) % cards.length;
 
@@ -127,13 +124,13 @@ export default function StackedCarousel() {
               } else if (offset === 1 || offset === cards.length - 1) {
                 scale = 0.85;
                 zIndex = 40;
-                translateX = offset === 1 ? 320 : -320;
+                translateX = offset === 1 ? 256 : -256; // 80% of 320
                 opacity = 0.9;
                 cursor = "pointer";
               } else if (offset === 2 || offset === cards.length - 2) {
                 scale = 0.75;
                 zIndex = 30;
-                translateX = offset === 2 ? 520 : -520;
+                translateX = offset === 2 ? 416 : -416; // 80% of 520
                 opacity = 0.6;
                 cursor = "pointer";
               }
@@ -149,20 +146,20 @@ export default function StackedCarousel() {
                     opacity,
                   }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="absolute w-[400px] md:w-[800px] h-[400px] 
+                  className="absolute w-[320px] md:w-[640px] h-[320px] 
                             rounded-2xl shadow-2xl overflow-hidden flex flex-col 
                             items-center justify-center p-8 text-center bg-black bg-opacity-90 border border-gray-800"
                   style={{ cursor }}
                   onClick={() => isCardClickable(offset) && goToSlide(index)}
                 >
                   <div className="relative flex flex-col items-center">
-                    <div className="mb-6 flex items-center justify-center w-14 h-14 rounded-full bg-[#6613E1]">
+                    <div className="mb-6 flex items-center justify-center w-12 h-12 rounded-full bg-[#6613E1]">
                       {card.icon}
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                    <h2 className="text-xl md:text-2xl font-bold mb-4">
                       {card.title}
                     </h2>
-                    <p className="text-gray-300 text-lg max-w-md">
+                    <p className="text-gray-300 text-base max-w-md">
                       {card.description}
                     </p>
                   </div>
@@ -184,7 +181,7 @@ export default function StackedCarousel() {
               onClick={prevSlide}
               className="p-3 rounded-full bg-gray-800 hover:bg-[#6613E1] transition"
             >
-              <ArrowLeft className="w-6 h-6" />
+              <ArrowLeft className="w-5 h-5" />
             </button>
             
             <div className="flex gap-3">
@@ -203,7 +200,7 @@ export default function StackedCarousel() {
               onClick={nextSlide}
               className="p-3 rounded-full bg-gray-800 hover:bg-[#6613E1] transition"
             >
-              <ArrowRight className="w-6 h-6" />
+              <ArrowRight className="w-5 h-5" />
             </button>
           </div>
         </div>
