@@ -36,18 +36,43 @@ export default function Footer() {
           <p className="text-white-300 text-[14px]">(239) 555-0108</p>
         </div>
       </div>
+{/* Middle Text */}
+<div className="text-center mt-10 text-[14px] leading-relaxed max-w-3xl mx-auto">
+  <p className="font-bold mb-1">Licensed ・ Calling Agent</p>
+  <p className="mt-2 mb-1">
+    Built By{" "}
+    <a
+      href="https://nexterse.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-bold text-white hover:text-purple-400 transition-colors"
+    >
+      Nexterse
+    </a>
+    . Powered By{" "}
+    <a
+      href="https://nexterse.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-bold text-white hover:text-purple-400 transition-colors"
+    >
+      Nexterse
+    </a>
+  </p>
+  <p className="mt-2 text-white-500">
+    Copyright © 2025{" "}
+    <a
+      href="https://nexterse.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-bold text-white hover:text-purple-400 transition-colors"
+    >
+      Nexterse
+    </a>
+    . All rights reserved
+  </p>
+</div>
 
-      {/* Middle Text */}
-      <div className="text-center mt-10 text-[14px] leading-relaxed max-w-3xl mx-auto">
-        <p className="font-bold mb-1">Licensed ・ Calling Agent</p>
-        <p className="mt-2 text-white-400 mb-1">
-          Built By <span className="font-bold">Nexterse</span>. Powered By{" "}
-          <span className="font-bold">Nexterse</span>
-        </p>
-        <p className="mt-2 text-white-500">
-          Copyright © 2025 Nexterse. All rights reserved
-        </p>
-      </div>
 
       {/* Logo */}
       <div className="flex justify-center items-center mt-15 -mb-16">
