@@ -15,7 +15,7 @@ export default function ContentArea() {
   return (
     <><div className="flex flex-col items-center px-4 space-y-4">
  <DemoCallForm />
-<div className="flex flex-col items-center -mt-35 px-4">
+<div className="flex flex-col items-center -mt-35 px-4 -mb-40">
   {/* About Us section */}
   <div
   style={{
@@ -31,21 +31,6 @@ export default function ContentArea() {
     // paddingBottom: "10px",
   }}
 >
-  {/* Overlay for opacity */}
-  {/* <div
-    style={{
-      position: "absolute",
-      inset: 0,
-      backgroundColor: "rgba(0,0,0,0.3)", // semi-transparent overlay
-      zIndex: 1,
-    }}
-  ></div> */}
-    {/* Buttons on About Us background */}
-    {/* <div className="flex justify-center gap-6 mb-6 mt-6">
-      <ActionButton primary>View Pricing</ActionButton>
-      <ActionButton>Try a Conversation</ActionButton>
-    </div> */}
-
     {/* About Us heading */}
     <div className="w-full flex flex-col items-center">
       <div
@@ -174,7 +159,7 @@ export default function ContentArea() {
 {/* heree */}
             {/* Other sections */}
            <>
-  <div style={{ background: "black", zIndex: 9999, position: "relative" }}>
+  <div style={{ zIndex: 9999, position: "relative" }}>
     <ScrollingStrip />
   </div>
 </>

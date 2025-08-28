@@ -29,7 +29,7 @@ export default function Download() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           zIndex: 0,
-          top: -"19px",
+          // top: -"19px",
           opacity: 0.10, // ✅ make bg dull
         }}
       />
