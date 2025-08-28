@@ -6,7 +6,7 @@ import ActionButton from "@/components/ActionButton";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="relative w-full h-20 flex items-center justify-between px-20 py-20 overflow-hidden">
+    <nav className="fixed top-0 left-0 w-full h-20 flex items-center justify-between px-20 bg-black/80 backdrop-blur-md z-50">
       {/* Logo */}
       <div className="relative">
         <Image

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white px-6 pt-0 pb-12 md:px-12 md:pt-4 md:pb-16 -top-[100px]">
+    <footer className="bg-black text-white px-6 pt-10 pb-12 md:px-12 md:pt-4 md:pb-16 -top-[100px]">
       {/* Centered Box */}
       <div className="mx-auto bg-[#1a1a1a] rounded-3xl p-8 flex flex-col md:flex-row justify-between items-start gap-8 max-w-6xl">
         
@@ -55,8 +55,8 @@ export default function Footer() {
         <Image
           src="/images/logo.png"
           alt="Xorris Logo Icon"
-          width={400}
-          height={260}
+          width={370}
+          height={240}
           className="object-contain"
         />
 
@@ -65,7 +65,7 @@ export default function Footer() {
           <Image
             src="/images/word.png"
             alt="Xorris Wordmark"
-            width={287}
+            width={270}
             height={56}
             className="object-contain"
           />

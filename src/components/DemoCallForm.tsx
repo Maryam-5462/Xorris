@@ -32,87 +32,86 @@ export default function DemoCallForm() {
 />
 
 
-        {/* Profiles Row */}
-        <div className="relative z-10 flex items-center justify-between w-full max-w-5xl px-12">
-          {/* Agent */}
-          <div className="flex flex-col items-center">
-            <div className="rounded-full w-[280px] h-[280px] overflow-hidden ">
-              <Image
-                src="/images/left.png"
-                alt="Agent"
-                width={280}
-                height={280}
-                className="rounded-full"
-              />
-            </div>
-          </div>
-
-       {/* Center Wave + Timer */}
-{/* Center Wave + Timer */}
-<div className="flex flex-col items-center justify-center space-y-6">
-
-  <div className="text-center mb-6">
-        <div
-  className="inline-block rounded-full px-6 py-2 text-sm md:text-base font-medium whitespace-nowrap"
-  style={{ background: "rgba(102, 19, 225, 1)" }}
->
-  AI Can Now Make &amp; Take Calls On Your Behalf!
-</div>
-
-        </div>
-
-        {/* Heading */}
-       <h2 className="text-2xl md:text-3xl font-semibold mb-12 text-center whitespace-nowrap">
-  Try a conversation with live demo
-</h2>
-
-  {/* Circle + Equalizer */}
-  <div className="relative flex items-center justify-center h-64 w-64">
-    {/* Glow */}
-<div
-  className="absolute w-40 h-40 rounded-full animate-floating-glow blur-[10px] opacity-100"
-  style={{
-    background: "linear-gradient(180deg, rgba(0, 117, 255, 0.75) 0%, rgba(0, 255, 255, 0) 100%)",
-  }}
-></div>
-
-
-    {/* Bars */}
-    <div className="flex items-end space-x-1 z-10">
-  {[...Array(7)].map((_, i) => (
-    <div
-      key={i}
-      className="w-1 bg-white rounded-[9999px] animate-eq-bar"
-      style={{
-        height: "9px", // reduced from 20px
-        animationDelay: `${i * 150}ms`,
-        animationDuration: "1.2s",
-      }}
-    ></div>
-  ))}
-</div>
-
+    {/* Profiles Row */}
+<div className="relative z-10 flex items-center justify-center w-full max-w-5xl px-12">
+  {/* Agent */}
+  <div className="flex flex-col items-center -mr-20 mt-15"> 
+    <div className="rounded-full w-[280px] h-[280px] overflow-hidden">
+      <Image
+        src="/images/left.png"
+        alt="Agent"
+        width={280}
+        height={280}
+        className="rounded-full"
+      />
+    </div>
   </div>
 
-  {/* Timer BELOW the glow */}
-  <div className="text-red-500 text-2xl font-bold">
-    00 : {timeLeft.toString().padStart(2, "0")}
+  {/* Center Wave + Timer */}
+  <div className="flex flex-col items-center justify-center space-y-6">
+    {/* Tagline */}
+    <div className="text-center mb-6">
+      <div
+        className="inline-block rounded-full px-6 py-2 text-sm md:text-base font-medium whitespace-nowrap"
+        style={{ background: "rgba(102, 19, 225, 1)" }}
+      >
+        AI Can Now Make &amp; Take Calls On Your Behalf!
+      </div>
+    </div>
+
+    {/* Heading */}
+    <h2 className="text-2xl md:text-3xl font-semibold mb-12 text-center whitespace-nowrap">
+      Try a conversation with live demo
+    </h2>
+
+    {/* Circle + Equalizer */}
+    <div className="relative flex items-center justify-center h-64 w-64">
+      {/* Glow */}
+      <div
+        className="absolute w-40 h-40 rounded-full animate-floating-glow blur-[10px] opacity-100"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(0, 117, 255, 0.75) 0%, rgba(0, 255, 255, 0) 100%)",
+        }}
+      ></div>
+
+      {/* Bars */}
+      <div className="flex items-end space-x-1 z-10">
+        {[...Array(7)].map((_, i) => (
+          <div
+            key={i}
+            className="w-1 bg-white rounded-[9999px] animate-eq-bar"
+            style={{
+              height: "9px",
+              animationDelay: `${i * 150}ms`,
+              animationDuration: "1.2s",
+            }}
+          ></div>
+        ))}
+      </div>
+    </div>
+
+    {/* Timer */}
+    <div className="text-red-500 text-2xl font-bold">
+      00 : {timeLeft.toString().padStart(2, "0")}
+    </div>
+  </div>
+
+  {/* Receiver */}
+  <div className="flex flex-col items-center -ml-20 mt-15">
+    <div className="rounded-full w-[280px] h-[280px] overflow-hidden">
+      <Image
+        src="/images/right.png"
+        alt="Receiver"
+        width={280}
+        height={280}
+        className="rounded-full"
+      />
+    </div>
   </div>
 </div>
 
-          {/* Receiver */}
-          <div className="flex flex-col items-center">
-            <div className="rounded-full w-[280px] h-[280px] overflow-hidden">
-              <Image
-                src="/images/right.png"
-                alt="Receiver"
-                width={280}
-                height={280}
-                className="rounded-full"
-              />
-            </div>
-          </div>
-        </div>
+
 
         {/* End Demo Button */}
       <div className="flex justify-center">
@@ -121,7 +120,7 @@ export default function DemoCallForm() {
       setInCall(false);
       setTimeLeft(30);
     }}
-    className="mt-12 ml-25 w-[320px] md:w-[420px] rounded-xl py-1 text-lg font-semibold text-white opacity-90 transition border border-transparent hover:border-white cursor-pointer"
+    className="mt-12 ml-6 w-[320px] md:w-[420px] rounded-xl py-1 text-lg font-semibold text-white opacity-90 transition border border-transparent hover:border-white cursor-pointer"
     style={{ background: "rgba(102, 19, 225, 1)" }}
   >
     End Demo
