@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
+/* Custom font */
 .font-monument {
   font-family: "Monument Extended", sans-serif;
 }
+@font-face {
+  font-family: "Monument Extended";
+  src: url("/fonts/MonumentExtended-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* optional – smoother edge fade on side cards (Safari/WebKit safe) */
 .card-edge-mask {
   -webkit-mask-image: radial-gradient(
@@ -13,3 +21,82 @@
   mask-image: radial-gradient(120% 70% at 50% 50%, #000 65%, transparent 100%);
 }
 
+/* Bars grow UP + DOWN */
+@keyframes eq-bar {
+  0%, 100% {
+    transform: scaleY(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: scaleY(2.2);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0.6);
+    opacity: 0.4;
+  }
+  75% {
+    transform: scaleY(1.8);
+    opacity: 0.8;
+  }
+}
+
+.animate-eq-bar {
+  animation: eq-bar 1.2s infinite ease-in-out;
+  transform-origin: center; /* expand both up + down */
+}
+
+/* Glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+@keyframes floating-glow {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.9;
+  }
+  25% {
+    transform: translate(-10px, -6px) scale(1.1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate(-20px, 6px) scale(1);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translate(-10px, -3px) scale(0.95);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.9;
+  }
+}
+
+.animate-floating-glow {
+  animation: floating-glow 1.5s ease-in-out infinite;
+}
+@font-face {
+  font-family: "Monument Extended";
+  src: url("/fonts/MonumentExtended-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  src: url("/fonts/MonumentExtended-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}

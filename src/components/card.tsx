@@ -74,9 +74,9 @@ export default function StackedCarousel() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen w-full bg-black transform scale-80 origin-top mt-25"> {/* 80% zoom effect */}
+    <div className="flex justify-center items-center min-h-screen w-full bg-black transform scale-80 origin-top -mt-20 "> {/* 80% zoom effect */}
       <div 
-       className="relative flex flex-col items-center justify-center w-[1200px] min-h-[880px] overflow-hidden text-white py-16 rounded-[32px] "
+       className="relative flex flex-col items-center justify-center w-[1200px] min-h-[780px] overflow-hidden text-white py-0 rounded-[32px] "
 
         style={{
           backgroundImage: "linear-gradient(rgba(48, 48, 48, 0.3), rgba(55, 53, 53, 0.3)), url('/images/lowBG.gif')",

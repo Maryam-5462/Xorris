@@ -1,145 +1,265 @@
 "use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function DemoCallForm() {
-  return (
-    <div className="relative min-h-[140vh] w-screen overflow-hidden text-white">
-  {/* Main Background */}
-  <Image
-    src="/images/lowBG.gif"
-    alt="Main Background"
-    fill
-    priority
-    className="object-cover z-0 opacity-50"   // keep in back but visible
-  />
+  const [inCall, setInCall] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(30);
+  const [agentName, setAgentName] = useState("");
+  const [agentRole, setAgentRole] = useState("");
+  const [receiverName, setReceiverName] = useState("");
+  const [receiverRole, setReceiverRole] = useState("");
+
+ useEffect(() => {
+  if (inCall && timeLeft > 0) {
+    const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+    return () => clearTimeout(timer);
+  }
+}, [inCall, timeLeft]);
+ 
+
+  if (inCall) {
+    // Demo Call Screen
+    return (
+      <div className="relative min-h-[100vh] w-screen overflow-hidden flex flex-col items-center justify-center bg-black text-white -top-30">
+        {/* Background */}
+       <Image
+  src="/images/demoBG.gif"
+  alt="Main Background"
+  fill
+  priority
+  className="object-cover z-0 opacity-50 pointer-events-none"
+/>
 
 
-      {/* Top Net Overlay */}
-      {/* Top Net Overlay */}
-  <div className="absolute top-6 left-0 w-full h-2/5 z-10">
-    <Image
-      src="/images/net.png"
-      alt="Overlay Net"
-      fill
-      priority
-      className="object-cover opacity-70"   // make it transparent
-    />
+        {/* Profiles Row */}
+        <div className="relative z-10 flex items-center justify-between w-full max-w-5xl px-12">
+          {/* Agent */}
+          <div className="flex flex-col items-center">
+            <div className="rounded-full w-[280px] h-[280px] overflow-hidden ">
+              <Image
+                src="/images/left.png"
+                alt="Agent"
+                width={280}
+                height={280}
+                className="rounded-full"
+              />
+            </div>
+          </div>
+
+       {/* Center Wave + Timer */}
+{/* Center Wave + Timer */}
+<div className="flex flex-col items-center justify-center space-y-6">
+
+  <div className="text-center mb-6">
+        <div
+  className="inline-block rounded-full px-6 py-2 text-sm md:text-base font-medium whitespace-nowrap"
+  style={{ background: "rgba(102, 19, 225, 1)" }}
+>
+  AI Can Now Make &amp; Take Calls On Your Behalf!
+</div>
+
+        </div>
+
+        {/* Heading */}
+       <h2 className="text-2xl md:text-3xl font-semibold mb-12 text-center whitespace-nowrap">
+  Try a conversation with live demo
+</h2>
+
+  {/* Circle + Equalizer */}
+  <div className="relative flex items-center justify-center h-64 w-64">
+    {/* Glow */}
+<div
+  className="absolute w-40 h-40 rounded-full animate-floating-glow blur-[10px] opacity-100"
+  style={{
+    background: "linear-gradient(180deg, rgba(0, 117, 255, 0.75) 0%, rgba(0, 255, 255, 0) 100%)",
+  }}
+></div>
+
+
+    {/* Bars */}
+    <div className="flex items-end space-x-1 z-10">
+  {[...Array(7)].map((_, i) => (
+    <div
+      key={i}
+      className="w-1 bg-white rounded-[9999px] animate-eq-bar"
+      style={{
+        height: "9px", // reduced from 20px
+        animationDelay: `${i * 150}ms`,
+        animationDuration: "1.2s",
+      }}
+    ></div>
+  ))}
+</div>
+
   </div>
 
-      {/* Centered Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center min-h-[140vh]">
-  {/* Pill */}
-<div className="text-center mb-15 -mt-1">
+  {/* Timer BELOW the glow */}
+  <div className="text-red-500 text-2xl font-bold">
+    00 : {timeLeft.toString().padStart(2, "0")}
+  </div>
+</div>
+
+          {/* Receiver */}
+          <div className="flex flex-col items-center">
+            <div className="rounded-full w-[280px] h-[280px] overflow-hidden">
+              <Image
+                src="/images/right.png"
+                alt="Receiver"
+                width={280}
+                height={280}
+                className="rounded-full"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* End Demo Button */}
+      <div className="flex justify-center">
+  <button
+    onClick={() => {
+      setInCall(false);
+      setTimeLeft(30);
+    }}
+    className="mt-12 ml-25 w-[320px] md:w-[420px] rounded-xl py-1 text-lg font-semibold text-white opacity-90 transition border border-transparent hover:border-white cursor-pointer"
+    style={{ background: "rgba(102, 19, 225, 1)" }}
+  >
+    End Demo
+  </button>
+</div>
+
+
+      </div>
+    );
+  }
+
+  // Input Form Screen
+  return (
+    <div className="relative min-h-[100vh] w-screen overflow-hidden text-white -top-30">
+      {/* Background */}
+      <Image
+        src="/images/lowBG.gif"
+        alt="Main Background"
+        fill
+        priority
+        className="object-cover z-0 opacity-50"
+      />
+
+      {/* Center Content */}
+      <div className="relative z-20 flex flex-col items-center justify-center min-h-[100vh] px-4">
+        {/* Top Pill */}
+        <div className="text-center mb-6">
   <div
-    className="inline-block rounded-full bg-purple-600 px-6 py-4
-               text-[21px] font-normal leading-[100%] tracking-[0] 
-               text-center font-[Montserrat]"
+    className="inline-block rounded-full px-6 py-2 text-sm md:text-base"
+    style={{
+      background: "rgba(102, 19, 225, 1)",
+      // fontFamily: "Monument Extended, sans-serif",
+    }}
   >
     AI Can Now Make &amp; Take Calls On Your Behalf!
   </div>
 </div>
 
 
-{/* Heading */}
-<h2 className="text-3xl font-semibold mb-18 text-center -mt-10">
-  Try a conversation with live demo
-</h2>
-{/* Form */}
-  <form className="flex flex-col gap-5 w-full max-w-[450px]">
-  {/* Full Name */}
-  <div className="flex flex-col">
-    <label className="text-base mb-1" htmlFor="fullname">
-      Full Name
-    </label>
-    <input
-      id="fullname"
-      type="text"
-      placeholder="Enter Full Name"
-      required
-      className="mx-auto w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-    />
-  </div>
+        {/* Heading */}
+        <h2 className="text-2xl md:text-3xl font-semibold mb-12 text-center">
+          Try a conversation with live demo
+        </h2>
 
-  {/* Role */}
-  <div className="flex flex-col">
-    <label className="text-base mb-1" htmlFor="role">
-      Select Role
-    </label>
-    <select
-      id="role"
-      required
-      className="mx-auto w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-base text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-    >
-      <option value="">Select Role</option>
-      <option value="customer">Teacher</option>
-      <option value="sales">Student</option>
-      <option value="support">Client</option>
-      <option value="support">Ceo</option>
-    </select>
-  </div>
+        {/* Form */}
+        <form
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-5xl"
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (agentName && agentRole && receiverName && receiverRole) {
+              setInCall(true);
+            } else {
+              alert("Please fill all details before starting demo call!");
+            }
+          }}
+        >
+          {/* Agent Details */}
+          <div className="bg-white/10 rounded-2xl p-6 shadow-lg">
+             <h3 className="text-xl font-semibold mb-6 text-center">
+              Agent Details
+            </h3>
+            <div className="flex justify-center mb-6">
+              <div className="rounded-full overflow-hidden">
+                <Image
+                  src="/images/Blueprofile.png"
+                  alt="Agent Profile"
+                  width={90}
+                  height={90}
+                  className="rounded-full"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <input
+                type="text"
+                value={agentName}
+                onChange={(e) => setAgentName(e.target.value)}
+                placeholder="Enter Full Name"
+                className="w-full rounded-lg border px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+              <input
+                type="text"
+                value={agentRole}
+                onChange={(e) => setAgentRole(e.target.value)}
+                placeholder="Enter Your Role"
+                className="w-full rounded-lg border px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+            </div>
+          </div>
 
-  {/* Call Goal */}
-  <div className="flex flex-col">
-    <label className="text-base mb-1" htmlFor="callgoal">
-      Call Goal
-    </label>
-    <textarea
-      id="callgoal"
-      placeholder="Enter Call Goal"
-      required
-      className="mx-auto w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-      rows={3}
-    />
-  </div>
-
-  {/* Submit Button */}
-  <button
-    type="submit"
-    className="mx-auto w-full rounded-xl bg-gradient-to-r from-purple-600 to-purple-800 py-3 text-lg font-semibold text-white hover:opacity-90 transition"
-  >
-    Demo Call
-  </button>
-</form>
-
-      </div>
-
-      {/* Arrow + Free Demo Call */}
-{/* Text */}
-<div className="absolute top-86 right-60 z-10 font-caveat text-4xl leading-tight text-right
-"style={{
-    // top: "89px",
-    // left: "1273px",
-    fontFamily: "Caveat, cursive",
-    fontWeight: 400,
-    fontSize: "30px",
-    lineHeight: "100%",
-    letterSpacing: "0%",
-  }}>
-  Try a FREE <br /> demo call !
-</div>
-
-{/* Arrow */}
-<div
-  className="absolute top-37 right-[15px] z-10 -ml-8"
-  style={{
-    transform: "rotate(28deg)",
-    opacity: 1,
-  }}
->
-  <Image src="/images/arrow.png" alt="Arrow" width={160} height={210} />
-</div>
-
-     {/* Bottom Down Net */}
- <div className="absolute bottom-0 left-0 w-full h-1/3 z-10">
-  <Image
-    src="/images/hero-bg.png"
-    alt="Bottom Net"
-    fill
-    priority
-    className="object-cover opacity-22"  // apply here
+          {/* Receiver Details */}
+          <div className="bg-white/10 rounded-2xl p-6 shadow-lg">
+            <h3 className="text-xl font-semibold mb-6 text-center">
+              Receiver Details
+            </h3>
+            <div className="flex justify-center mb-6">
+              <div className="rounded-full overflow-hidden ">
+                <Image
+                  src="/images/profile.png"
+                  alt="Receiver Profile"
+                  width={90}
+                  height={90}
+                  className="rounded-full"
+                />
+              </div>
+            </div>
+             <div className="flex flex-col gap-4">
+  <input
+    type="text"
+    value={receiverName}
+    onChange={(e) => setReceiverName(e.target.value)}
+    placeholder="Enter Full Name"
+    className="w-full rounded-lg border px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+  />
+  <input
+    type="text"
+    value={receiverRole}
+    onChange={(e) => setReceiverRole(e.target.value)}
+    placeholder="Enter Your Role"
+    className="w-full rounded-lg border px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
   />
 </div>
 
+          </div>
+
+          {/* Submit */}
+          <div className="col-span-1 md:col-span-2 flex justify-center">
+  <button
+    type="submit"
+   className="mt-12 w-[320px] md:w-[420px] rounded-xl py-1 text-lg font-semibold text-white opacity-90 transition border border-transparent hover:border-white cursor-pointer"
+    style={{ background: "rgba(102, 19, 225, 1)" }}
+  >
+    Initiate Demo Call
+  </button>
+</div>
+
+        </form>
+      </div>
     </div>
   );
 }

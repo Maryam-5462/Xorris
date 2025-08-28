@@ -49,6 +49,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
           z-index: 2;
           overflow: hidden;
           padding: 0;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
         .action-button::before {
@@ -87,6 +88,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
           border-radius: 100px;
           animation: flow 2s linear infinite;
           z-index: -1;
+          transition: opacity 0.3s ease;
         }
         
         .action-button::after {
@@ -99,6 +101,28 @@ const ActionButton: React.FC<ActionButtonProps> = ({
           background: rgba(18, 0, 32, 0.9);
           border-radius: 100px;
           z-index: -1;
+          transition: background 0.3s ease;
+        }
+        
+        /* Hover effects */
+        .action-button:hover:not(.disabled) {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .action-button:hover:not(.disabled)::before {
+          animation-duration: 1s;
+          opacity: 0.9;
+        }
+        
+        .action-button:hover:not(.disabled)::after {
+          background: rgba(30, 5, 50, 0.85);
+        }
+        
+        /* Active state */
+        .action-button:active:not(.disabled) {
+          transform: translateY(0);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
         .action-button.disabled {
@@ -114,6 +138,11 @@ const ActionButton: React.FC<ActionButtonProps> = ({
         .button-content {
           position: relative;
           z-index: 1;
+          transition: transform 0.2s ease;
+        }
+        
+        .action-button:hover:not(.disabled) .button-content {
+          transform: scale(1.05);
         }
         
         @keyframes flow {

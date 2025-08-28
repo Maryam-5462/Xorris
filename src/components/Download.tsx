@@ -16,6 +16,7 @@ export default function Download() {
         alignItems: "center", // center vertically
         color: "#fff",
         backgroundColor: "#0A0A0A", // solid base color
+        top: "-170px",
 
       }}
     >
@@ -29,8 +30,8 @@ export default function Download() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           zIndex: 0,
-          top: "1px",
-          opacity: 0.30, // ✅ make bg dull
+          top: -"19px",
+          opacity: 0.10, // ✅ make bg dull
         }}
       />
 
@@ -119,14 +120,59 @@ export default function Download() {
         </div>
 
         {/* Right Phones Image */}
-        <div style={{ position: "relative", width: "600px", height: "520px" }}>
-          <Image
-            src="/images/twoPhones.png"
-            alt="Two phones mockup"
-            fill
-            style={{ objectFit: "contain" }}
-          />
-        </div>
+        <div
+  style={{
+    position: "relative",
+    width: "360px",
+    height: "547px",
+    border: "17px solid #000", // ✅ valid border
+  }}
+>
+ <div
+  style={{
+    position: "relative",
+    width: "360px",
+    height: "547px",
+    border: "12px solid #000",
+    overflow: "hidden",
+    borderRadius: "20px",
+  }}
+>
+  {/* Background: Download GIF */}
+  <Image
+    src="/images/download.gif"
+    alt="download image"
+    fill
+    style={{
+      objectFit: "cover",
+      zIndex: 1, // background layer
+    }}
+    priority
+  />
+
+  {/* Foreground: Waves GIF (overlay) */}
+{/* <Image
+  src="/images/waves.gif"
+  alt="waves image"
+  width={350} // smaller width
+  height={350} // smaller height
+  style={{
+    position: "absolute",
+    bottom: "-130px", // moves it down
+    left: "50%",     // center horizontally
+    transform: "translateX(-50%)", // perfect centering
+    mixBlendMode: "screen",
+    opacity: 0.9,
+    zIndex: 2,
+  }}
+  priority
+/> */}
+
+</div>
+
+
+</div>
+
       </div>
     </div>
   );

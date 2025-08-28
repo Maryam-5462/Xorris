@@ -15,23 +15,31 @@ export default function ContentArea() {
   return (
     <><div className="flex flex-col items-center px-4 space-y-4">
  <DemoCallForm />
-<div className="flex flex-col items-center -mt-7 px-4">
+<div className="flex flex-col items-center -mt-35 px-4">
   {/* About Us section */}
   <div
+  style={{
+    width: "100vw",
+    position: "relative",
+    marginLeft: "calc(50% - 50vw)",
+    marginRight: "calc(50% - 50vw)",
+    backgroundImage: "url('/images/background.gif')",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center 0%",
+    paddingTop: "50px",
+    paddingBottom: "10px",
+  }}
+>
+  {/* Overlay for opacity */}
+  <div
     style={{
-      width: "100vw",
-      position: "relative",
-      marginLeft: "calc(50% - 50vw)",
-      marginRight: "calc(50% - 50vw)",
-      backgroundImage: "url('/images/background.gif')",
-      opacity: "0.7",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      backgroundPosition: "center 0%",
-      paddingTop: "50px", // padding from top for heading
-      paddingBottom: "10px", // padding bottom for content
+      position: "absolute",
+      inset: 0,
+      backgroundColor: "rgba(0,0,0,0.3)", // semi-transparent overlay
+      zIndex: 1,
     }}
-  >
+  ></div>
     {/* Buttons on About Us background */}
     <div className="flex justify-center gap-6 mb-6 mt-6">
       <ActionButton primary>View Pricing</ActionButton>
@@ -89,7 +97,7 @@ export default function ContentArea() {
                 paddingLeft: "60px"
               }}>
                 {/* Top card */}
-                <div className="absolute top-0" style={{ left: "58%", transform: "translateX(-50%)" }}>
+                <div className="absolute -top-18" style={{ left: "58%", transform: "translateX(-50%)" }}>
                   <div className="w-[120px] h-[150px] bg-[#1E1E1E] rounded-2xl flex flex-col items-center justify-center text-white">
                     <div className="font-bold text-[22px]">17M</div>
                     <div className="opacity-80 text-xs">Downloads</div>
@@ -97,7 +105,7 @@ export default function ContentArea() {
                 </div>
 
                 {/* Middle row with 2 cards */}
-                <div className="flex justify-center gap-29 mt-[150px]">
+                <div className="flex justify-center gap-29 mt-[100px]">
                   <div className="w-[120px] h-[150px] bg-[#1E1E1E] rounded-2xl flex flex-col items-center justify-center text-white">
                     <div className="font-bold text-[22px]">2300+</div>
                     <div className="opacity-80 text-xs">Reviews</div>
@@ -109,7 +117,7 @@ export default function ContentArea() {
                 </div>
 
                 {/* Bottom card */}
-                <div className="absolute" style={{ top: "calc(140px + 120px + 40px)", left: "58%", transform: "translateX(-50%)" }}>
+                <div className="absolute" style={{ top: "calc(120px + 120px + 40px)", left: "58%", transform: "translateX(-50%)" }}>
                   <div className="w-[120px] h-[150px] bg-[#1E1E1E] rounded-2xl flex flex-col items-center justify-center text-white">
                     <div className="font-bold text-[22px]">8M+</div>
                     <div className="opacity-80 text-xs">Followers</div>
@@ -131,13 +139,13 @@ export default function ContentArea() {
                   style={{
                     position: "absolute",
                     top: "-25px",
-                    left: "-110px",
-                    width: "600px",
-                    height: "700px",
+                    left: "8px",
+                    width: "520px",
+                    height: "620px",
                     zIndex: 1,
                   }}
                 >
-                  <Image src="/images/tiltledPhone.png" alt="Phone mockup" fill style={{ objectFit: "contain" }} />
+                  <Image src="/images/aboutus.gif" alt="Phone mockup" fill style={{ objectFit: "contain" }} />
                 </div>
               </div>
 
