@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
       {/* Logo */}
       <div className="relative">
         <Image
-          src="/images/xorris.png"
+          src="/images/HeroLogo.png"
           alt="Xorris Logo"
           width={110}
           height={46}

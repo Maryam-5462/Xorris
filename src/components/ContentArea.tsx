@@ -27,24 +27,24 @@ export default function ContentArea() {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center 0%",
-    paddingTop: "50px",
-    paddingBottom: "10px",
+    paddingTop: "0px",
+    // paddingBottom: "10px",
   }}
 >
   {/* Overlay for opacity */}
-  <div
+  {/* <div
     style={{
       position: "absolute",
       inset: 0,
       backgroundColor: "rgba(0,0,0,0.3)", // semi-transparent overlay
       zIndex: 1,
     }}
-  ></div>
+  ></div> */}
     {/* Buttons on About Us background */}
-    <div className="flex justify-center gap-6 mb-6 mt-6">
+    {/* <div className="flex justify-center gap-6 mb-6 mt-6">
       <ActionButton primary>View Pricing</ActionButton>
       <ActionButton>Try a Conversation</ActionButton>
-    </div>
+    </div> */}
 
     {/* About Us heading */}
     <div className="w-full flex flex-col items-center">

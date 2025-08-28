@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white px-6 py-12 md:px-12 md:py-16">
+    <footer className="bg-black text-white px-6 pt-0 pb-12 md:px-12 md:pt-4 md:pb-16 -top-[100px]">
       {/* Centered Box */}
       <div className="mx-auto bg-[#1a1a1a] rounded-3xl p-8 flex flex-col md:flex-row justify-between items-start gap-8 max-w-6xl">
         
@@ -50,36 +50,34 @@ export default function Footer() {
       </div>
 
       {/* Logo */}
-     <div className="flex justify-center items-center mt-15 -mb-16">
-  {/* Left logo symbol */}
-  <Image
-    src="/images/logo.png"
-    alt="Xorris Logo Icon"
-    width={400}
-    height={260}
-    className="object-contain"
-  />
+      <div className="flex justify-center items-center mt-15 -mb-16">
+        {/* Left logo symbol */}
+        <Image
+          src="/images/logo.png"
+          alt="Xorris Logo Icon"
+          width={400}
+          height={260}
+          className="object-contain"
+        />
 
-  {/* Right side: wordmark + tagline */}
-  <div className="flex flex-col items-start -ml-14 mt-25">
-  <Image
-    src="/images/word.png"
-    alt="Xorris Wordmark"
-    width={287}
-    height={56}
-    className="object-contain"
-  />
-  <Image
-    src="/images/subtext.png"
-    alt="AI Based Calling Agent"
-    width={280}
-    height={25}
-    className="object-contain mt-2"
-  />
-</div>
-
-</div>
-
+        {/* Right side: wordmark + tagline */}
+        <div className="flex flex-col items-start -ml-14 mt-25">
+          <Image
+            src="/images/word.png"
+            alt="Xorris Wordmark"
+            width={287}
+            height={56}
+            className="object-contain"
+          />
+          <Image
+            src="/images/subtext.png"
+            alt="AI Based Calling Agent"
+            width={280}
+            height={25}
+            className="object-contain mt-2"
+          />
+        </div>
+      </div>
     </footer>
   );
 }

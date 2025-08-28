@@ -74,19 +74,21 @@ export default function StackedCarousel() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen w-full bg-black transform scale-80 origin-top -mt-20 "> {/* 80% zoom effect */}
-      <div 
-       className="relative flex flex-col items-center justify-center w-[1200px] min-h-[780px] overflow-hidden text-white py-0 rounded-[32px] "
+<div className="flex justify-center items-center min-h-screen bg-black overflow-x-auto -mt-50 mb-40">
+      <div
+  className="relative flex flex-col items-center justify-center 
+             w-[1200px] min-h-[680px] overflow-hidden text-white py-0 rounded-[32px]"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(48, 48, 48, 0.3), rgba(55, 53, 53, 0.3)), url('/images/lowBG.gif')",
+    backgroundSize: "cover",
+    backgroundPosition: "center 20%",
+    backgroundRepeat: "no-repeat",
+  }}
+  onMouseEnter={() => setIsHovered(true)}
+  onMouseLeave={() => setIsHovered(false)}
+>
 
-        style={{
-          backgroundImage: "linear-gradient(rgba(48, 48, 48, 0.3), rgba(55, 53, 53, 0.3)), url('/images/lowBG.gif')",
-          backgroundSize: "cover",
-          backgroundPosition: "center 20%",
-          backgroundRepeat: "no-repeat"
-        }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
         <div className="relative z-10 flex flex-col items-center w-full px-4">
           {/* Our Values Button */}
           <button 
@@ -137,21 +139,23 @@ export default function StackedCarousel() {
 
               return (
                 <motion.div
-                  key={card.id}
-                  initial={false}
-                  animate={{
-                    scale,
-                    x: translateX,
-                    zIndex,
-                    opacity,
-                  }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="absolute w-[320px] md:w-[640px] h-[320px] 
-                            rounded-2xl shadow-2xl overflow-hidden flex flex-col 
-                            items-center justify-center p-8 text-center bg-black bg-opacity-90 border border-gray-800"
-                  style={{ cursor }}
-                  onClick={() => isCardClickable(offset) && goToSlide(index)}
-                >
+  key={card.id}
+  initial={false}
+  animate={{
+    scale,
+    x: translateX,
+    zIndex,
+    opacity,
+  }}
+  transition={{ duration: 0.6, ease: "easeInOut" }}
+  className="absolute w-[380px] md:w-[600px] h-[360px] 
+             rounded-2xl shadow-2xl overflow-hidden flex flex-col 
+             items-center justify-center p-10 text-center 
+             bg-black bg-opacity-90 border border-gray-800"
+  style={{ cursor }}
+  onClick={() => isCardClickable(offset) && goToSlide(index)}
+>
+
                   <div className="relative flex flex-col items-center">
                     <div className="mb-6 flex items-center justify-center w-12 h-12 rounded-full bg-[#6613E1]">
                       {card.icon}

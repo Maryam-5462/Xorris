@@ -8,16 +8,15 @@ export default function Download() {
         width: "100vw",
         marginLeft: "calc(50% - 50vw)",
         marginRight: "calc(50% - 50vw)",
-        padding: "80px 20px",
-        height: "700px",
+        padding: "80px 10px",
+        height: "600px",
         position: "relative",
         display: "flex",
         justifyContent: "center", // center horizontally
         alignItems: "center", // center vertically
         color: "#fff",
         backgroundColor: "#0A0A0A", // solid base color
-        top: "-170px",
-
+        // top: "-170px",
       }}
     >
       {/* Background Layer (only bg has opacity) */}
@@ -44,7 +43,7 @@ export default function Download() {
           gap: "60px",
           zIndex: 1, // keeps above bg
           maxWidth: "1200px",
-          marginBottom: "-1px",
+          // marginBottom: "-1px",
         }}
       >
         {/* Left Text Content */}
@@ -121,19 +120,14 @@ export default function Download() {
 
         {/* Right Phones Image */}
         <div
-  style={{
-    position: "relative",
-    width: "360px",
-    height: "547px",
-    border: "17px solid #000", // ✅ valid border
-  }}
+  
 >
  <div
   style={{
     position: "relative",
     width: "360px",
-    height: "547px",
-    border: "12px solid #000",
+    height: "500px",
+    // border: "12px solid #000",
     overflow: "hidden",
     borderRadius: "20px",
   }}
@@ -150,23 +144,7 @@ export default function Download() {
     priority
   />
 
-  {/* Foreground: Waves GIF (overlay) */}
-{/* <Image
-  src="/images/waves.gif"
-  alt="waves image"
-  width={350} // smaller width
-  height={350} // smaller height
-  style={{
-    position: "absolute",
-    bottom: "-130px", // moves it down
-    left: "50%",     // center horizontally
-    transform: "translateX(-50%)", // perfect centering
-    mixBlendMode: "screen",
-    opacity: 0.9,
-    zIndex: 2,
-  }}
-  priority
-/> */}
+
 
 </div>
 
